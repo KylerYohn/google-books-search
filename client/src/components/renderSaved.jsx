@@ -20,7 +20,7 @@ function RenderSaved(props) {
                     </a>
                   </button>
                   <button
-                    onClick={e => props.onClick(data, e)}
+                    onClick={e => props.onClick(data._id, e)}
                     className="btn btn-danger"
                   >
                     Delete

@@ -15,9 +15,9 @@ class Saved extends Component {
     console.log(this.state.books);
   };
 
-  deleteBook = id => {
+  deleteBook = (id, e) => {
     API.deleteBook(id)
-      .then(res => this.setState({ books: res.data }))
+      .then(res => this.loadSaved())
       .catch(err => console.log(err));
   };
 
@@ -32,7 +32,11 @@ class Saved extends Component {
         <Jumbotron>
           <h1>Books you saved!</h1>
         </Jumbotron>
-        <RenderSaved loadSaved={this.loadSaved()} results={this.state.books} />
+        <RenderSaved
+          loadSaved={this.loadSaved()}
+          results={this.state.books}
+          onClick={id => this.deleteBook(id)}
+        />
       </div>
     );
   }
