@@ -13,7 +13,10 @@ function BookList(props) {
                 <div className="card">
                   <div className="card-title">
                     {data.volumeInfo.title}
-                    <button className="btn btn-danger">
+                    <button
+                      style={{ float: "right" }}
+                      className="btn btn-danger"
+                    >
                       <a
                         style={{ color: "black" }}
                         href={data.volumeInfo.previewLink}
@@ -24,6 +27,7 @@ function BookList(props) {
                       </a>
                     </button>
                     <button
+                      style={{ float: "right" }}
                       onClick={e => props.onClick(data, e)}
                       className="btn btn-primary"
                     >
